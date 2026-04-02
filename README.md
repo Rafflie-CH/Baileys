@@ -2,23 +2,23 @@
 
 <div align="center">
 
-<img src="https://wy0xihlhnevw1toh.public.blob.vercel-storage.com/images/ueug_ItRafzchanBot-kSBgWKyatxf68Vxl3DMdr14VhAv7tR.png" alt="Header Image" width="100%"/>
+<img src="https://wy0xihlhnevw1toh.public.blob.vercel-storage.com/images/ueug_ItsukichanBot-kSBgWKyatxf68Vxl3DMdr14VhAv7tR.png" alt="Header Image" width="100%"/>
 
 <br/>
 
 <!-- Badges -->
 <p>
-  <img src="https://img.shields.io/npm/dw/%40itRafzchan%2Fbaileys?label=npm&color=%23CB3837" alt="NPM Downloads"/>
-  <img src="https://img.shields.io/github/v/release/itRafzchann/baileys?include_prereleases&sort=semver" alt="Latest Release"/>
-  <img src="https://img.shields.io/github/languages/code-size/itRafzchann/baileys" alt="Code Size"/>
-  <img src="https://img.shields.io/github/license/itRafzchann/baileys" alt="License"/>
-  <img src="https://img.shields.io/github/stars/itRafzchann/baileys" alt="Stars"/>
-  <img src="https://img.shields.io/github/forks/itRafzchann/baileys" alt="Forks"/>
+  <img src="https://img.shields.io/npm/dw/%40itsukichan%2Fbaileys?label=npm&color=%23CB3837" alt="NPM Downloads"/>
+  <img src="https://img.shields.io/github/v/release/itsukichann/baileys?include_prereleases&sort=semver" alt="Latest Release"/>
+  <img src="https://img.shields.io/github/languages/code-size/itsukichann/baileys" alt="Code Size"/>
+  <img src="https://img.shields.io/github/license/itsukichann/baileys" alt="License"/>
+  <img src="https://img.shields.io/github/stars/itsukichann/baileys" alt="Stars"/>
+  <img src="https://img.shields.io/github/forks/itsukichann/baileys" alt="Forks"/>
 </p>
 
 <!-- GitHub Stats -->
 <p>
-  <img src="https://github-readme-stats.vercel.app/api?username=itRafzchann&show_icons=true&theme=radical" alt="GitHub Stats"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=itsukichann&show_icons=true&theme=radical" alt="GitHub Stats"/>
 </p>
 
 </div>
