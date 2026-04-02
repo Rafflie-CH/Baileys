@@ -409,7 +409,7 @@ connectToWhatsApp()
 import pino from "pino"
 import { makeInMemoryStore, getAggregateVotesInPollMessage } from '@Rafflie-CH/Baileys'
 
-const logger = pino({ timestamp: () => `,"time":"${new Date().toJSON()}"` }).child({ class: "@ItRafzchann" })
+const logger = pino({ timestamp: () => `,"time":"${new Date().toJSON()}"` }).child({ class: "@Rafzhost" })
 logger.level = "fatal"
 const store = makeInMemoryStore({ logger })
 
@@ -419,7 +419,7 @@ async function getMessage(key){
         return msg?.message
     }
     return {
-        conversation: "ItRafzi Kawaiii"
+        conversation: "RAFZHOST"
     }
 } 
 
@@ -599,7 +599,7 @@ await Rafz.sendMessage(
     id,
     { 
         contacts: { 
-            displayName: 'ItRafzchann', 
+            displayName: 'Rafzhost', 
             contacts: [{ vcard }] 
         }
     }
@@ -854,7 +854,7 @@ await Rafz.sendMessage(
     {
         stickerPack: {
             name: 'Hiii', 
-            publisher: 'By ItRafzchann', 
+            publisher: 'By Rafzhost', 
             description: 'Hello', 
             cover: Buffer, // Image buffer
             stickers: [{
@@ -1247,7 +1247,7 @@ await Rafz.sendMessage(
                     flow_message_version: '3', 
                     flow_token: '1:1307913409923914:293680f87029f5a13d1ec5e35e718af3',
                     flow_id: '1307913409923914',
-                    flow_cta: 'ItRafzchann kawaii >\\<', 
+                    flow_cta: 'RAFZHOST', 
                     flow_action: 'navigate', 
                     flow_action_payload: {
                     	screen: 'QUESTION_ONE',
@@ -1408,7 +1408,7 @@ await Rafz.sendMessage(
             description: 'Description',
             currencyCode: 'IDR',
             priceAmount1000: '283xxx',
-            retailerId: 'ItRafzchann',
+            retailerId: 'Rafzhost',
             url: 'https://example.com',
             productImageCount: 1
         },
@@ -1444,7 +1444,7 @@ await Rafz.sendMessage(
                 payment_settings: [{ 
                    type: "pix_static_code", 
                    pix_static_code:  { 
-                      merchant_name: 'itRafzchann kawaii >\\\\\\<', 
+                      merchant_name: 'RAFZHOST', 
                       key: 'example@itRafzchan.com', 
                       key_type: 'EMAIL' // PHONE || EMAIL || CPF || EVP 
                    } 
@@ -1488,7 +1488,7 @@ await Rafz.sendMessage(
                     order_type: 'PAYMENT_REQUEST', 
                     items: [{
                         retailer_id: 'your_retailer_id', 
-                        name: 'ItRafzchann Kawaii >\\\<', 
+                        name: 'RAFZHOST', 
                         amount: {
                             value: '999999999', 
                             offset: '100'
@@ -1496,7 +1496,7 @@ await Rafz.sendMessage(
                         quantity: '1', 
                     }]
                 }, 
-                additional_note: 'ItRafzchann Kawaii >\\\<', 
+                additional_note: 'RAFZHOST', 
                 native_payment_methods: [], 
                 share_payment_status: false
             }) 
@@ -1670,7 +1670,7 @@ await Rafz.sendMessage(
             description: 'Description',
             currencyCode: 'IDR',
             priceAmount1000: '283xxx',
-            retailerId: 'ItRafzchann',
+            retailerId: 'Rafzhost',
             url: 'https://example.com',
             productImageCount: 1
         },
@@ -1807,7 +1807,7 @@ await Rafz.sendMessage(
             description: 'Description',
             currencyCode: 'IDR',
             priceAmount1000: '283xxx',
-            retailerId: 'ItRafzchann',
+            retailerId: 'Rafzhost',
             url: 'https://example.com',
             productImageCount: 1
         },
