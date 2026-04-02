@@ -26,7 +26,7 @@
 
 This library was originally a project for **CS-2362 at Ashoka University** and is in no way affiliated with or endorsed by WhatsApp. Use at your own discretion. Do not spam people with this. We discourage any stalkerware, bulk or automated messaging usage. 
 
-### Important Note
+> [!IMPORTANT]
 Baileys is a fork of ItsukiChann/Bailyes which has been modified by Rafz (Rafflie) to add several missing features
 
 #### Liability and License Notice
