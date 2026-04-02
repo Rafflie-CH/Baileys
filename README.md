@@ -1121,7 +1121,7 @@ await Rafz.sendMessage(
            index: 1,
            urlButton: {
                 displayText: 'Follow Me', 
-                url: 'https://whatsapp.com/channel/0029Vag9VSI2ZjCocqa2lB1y'
+                url: 'https://whatsapp.com/channel/0029Vb9R8pgAzNbzE3K8QP39'
              }, 
          }, 
          {
@@ -1163,15 +1163,15 @@ await Rafz.sendMessage(
                 name: 'cta_url',
                 buttonParamsJson: JSON.stringify({
                     display_text: 'Follow Me',
-                    url: 'https://whatsapp.com/channel/0029Vag9VSI2ZjCocqa2lB1y',
-                    merchant_url: 'https://whatsapp.com/channel/0029Vag9VSI2ZjCocqa2lB1y'
+                    url: 'https://whatsapp.com/channel/0029Vb9R8pgAzNbzE3K8QP39',
+                    merchant_url: 'https://whatsapp.com/channel/0029Vb9R8pgAzNbzE3K8QP39'
                 })
             },
             {
                 name: 'cta_copy',
                 buttonParamsJson: JSON.stringify({
                     display_text: 'Click Me!',
-                    copy_code: 'https://whatsapp.com/channel/0029Vag9VSI2ZjCocqa2lB1y'
+                    copy_code: 'https://whatsapp.com/channel/0029Vb9R8pgAzNbzE3K8QP39'
                 })
             },
             {
@@ -1217,7 +1217,7 @@ await Rafz.sendMessage(
                     title: 'Follow Me!',
                     link: {
                         in_app_webview: true, // or false
-                        url: 'https://whatsapp.com/channel/0029Vag9VSI2ZjCocqa2lB1y'
+                        url: 'https://whatsapp.com/channel/0029Vb9R8pgAzNbzE3K8QP39'
                     }
                 })
             },
