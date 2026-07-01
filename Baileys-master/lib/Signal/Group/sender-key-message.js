@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", { value: true })
 const {
   verifySignature, 
   calculateSignature
-} = require("@itsukichan/libsignal-node/src/curve")
+} = require("@itRafzchan/libsignal-node/src/curve")
 const { proto } = require("../../../WAProto")
 const { CiphertextMessage } = require("./ciphertext-message")
 

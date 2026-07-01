@@ -372,19 +372,19 @@ const makeInMemoryStore = (config) => {
             const message = messages[jid]?.array.slice(-1)[0]
             return message
         },
-        fetchImageUrl: async (jid, suki) => {
+        fetchImageUrl: async (jid, Rafz) => {
             const contact = contacts[jid]
             if (!contact) {
-                return suki?.profilePictureUrl(jid)
+                return Rafz?.profilePictureUrl(jid)
             }
             if (typeof contact.imgUrl === 'undefined') {
-                contact.imgUrl = await suki?.profilePictureUrl(jid)
+                contact.imgUrl = await Rafz?.profilePictureUrl(jid)
             }
             return contact.imgUrl
         },
-        fetchGroupMetadata: async (jid, suki) => {
+        fetchGroupMetadata: async (jid, Rafz) => {
             if (!groupMetadata[jid]) {
-                const metadata = await suki?.groupMetadata(jid)
+                const metadata = await Rafz?.groupMetadata(jid)
                 if (metadata) {
                     groupMetadata[jid] = metadata
                 }

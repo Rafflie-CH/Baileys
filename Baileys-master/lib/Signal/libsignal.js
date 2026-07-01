@@ -7,7 +7,7 @@ const {
   SessionBuilder, 
   SessionRecord, 
   ProtocolAddress
-} = require("@itsukichan/libsignal-node")
+} = require("@itRafzchan/libsignal-node")
 const { generateSignalPubKey } = require("../Utils")
 const { 
   isHostedLidUser, 

@@ -73,7 +73,7 @@ const makeMessagesSocket = (config) => {
         maxMsgRetryCount 
     } = config
 	
-    const suki = makeNewsletterSocket(config)
+    const Rafz = makeNewsletterSocket(config)
     
     const { 
         ev, 
@@ -90,7 +90,7 @@ const makeMessagesSocket = (config) => {
         groupToggleEphemeral, 
         executeUSyncQuery, 
         newsletterMetadata
-    } = suki   
+    } = Rafz   
 
     const userDevicesCache = config.userDevicesCache || new NodeCache({
         stdTTL: DEFAULT_CACHE_TTLS.USER_DEVICES,
@@ -613,7 +613,7 @@ const makeMessagesSocket = (config) => {
     /** Fetch image for groups, user, and newsletter **/
     const profilePictureUrl = async (jid) => {
         if (isJidNewsletter(jid)) {
-            const metadata = await suki.newsletterMetadata('JID', jid) 
+            const metadata = await Rafz.newsletterMetadata('JID', jid) 
 
             return getUrlFromDirectPath(metadata.thread_metadata.picture?.direct_path || '') 
 
@@ -1400,7 +1400,7 @@ const makeMessagesSocket = (config) => {
     const waitForMsgMediaUpdate = bindWaitForEvent(ev, 'messages.media-update')
     
     return {
-        ...suki,
+        ...Rafz,
         getPrivacyTokens,
         assertSessions,
         profilePictureUrl, 
@@ -1650,7 +1650,7 @@ const makeMessagesSocket = (config) => {
             
             else if (typeof content === 'object' && 'album' in content && content.album) {
             	const albumMsg = await prepareAlbumMessageContent(jid, content.album, {
-            		suki: {
+            		Rafz: {
             			relayMessage, 
             			waUploadToServer
             		}, 

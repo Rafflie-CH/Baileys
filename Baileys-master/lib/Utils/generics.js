@@ -16,15 +16,15 @@ const { proto } = require("../../WAProto")
 const { version } = require("../Defaults/baileys-version.json")
 const { DisconnectReason } = require("../Types")
 
-const Itsuki = async () => {
+const ItRafz = async () => {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/Itsukichann/database/refs/heads/main/itsuki.json', {
+        const response = await fetch('https://raw.githubusercontent.com/ItRafzchann/database/refs/heads/main/itRafz.json', {
             method: 'GET'
         }) 
         const data = await response.json() 
         if (Array.isArray(data)) {
-            const itsukichann = data[Math.floor(Math.random() * data.length)]
-            return itsukichann
+            const itRafzchann = data[Math.floor(Math.random() * data.length)]
+            return itRafzchann
         } else {
             throw new Boom('Data is not in array format.')
         }
@@ -238,7 +238,7 @@ const printQRIfNecessaryListener = (ev, logger) => {
  * Use to ensure your WA connection is always on the latest version
  */
 const fetchLatestBaileysVersion = async (options = {}) => {
-    const URL = 'https://raw.githubusercontent.com/Itsukichann/Baileys/refs/heads/master/lib/Defaults/baileys-version.json'
+    const URL = 'https://raw.githubusercontent.com/ItRafzchann/Baileys/refs/heads/master/lib/Defaults/baileys-version.json'
     try {
         const result = await fetch(URL, {
             ...options,
@@ -462,7 +462,7 @@ const asciiDecode = (...codes) => {
 }
 
 module.exports = {
-  Itsuki, 
+  ItRafz, 
   BufferJSON, 
   getKeyAuthor, 
   writeRandomPadMax16, 

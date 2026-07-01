@@ -76,7 +76,7 @@ const makeMessagesRecvSocket = (config) => {
         enableAutoSessionRecreation 
     } = config
 	
-    const suki = makeMessagesSocket(config)
+    const Rafz = makeMessagesSocket(config)
     
     const {
         ev, 
@@ -100,7 +100,7 @@ const makeMessagesRecvSocket = (config) => {
         createParticipantNodes,
         messageRetryManager, 
         sendPeerDataOperationMessage 
-     } = suki
+     } = Rafz
     
     /** this mutex ensures that each retryRequest will wait for the previous one to finish */
     const retryMutex = makeMutex()
@@ -867,7 +867,7 @@ const makeMessagesRecvSocket = (config) => {
                     attrs: {
                         to: S_WHATSAPP_NET,
                         type: 'set',
-                        id: suki.generateMessageTag(),
+                        id: Rafz.generateMessageTag(),
                         xmlns: 'md'
                     },
                     content: [
@@ -1628,7 +1628,7 @@ const makeMessagesRecvSocket = (config) => {
     })
     
     return {
-        ...suki,
+        ...Rafz,
         sendMessageAck,
         sendRetryRequest,
         offerCall, 

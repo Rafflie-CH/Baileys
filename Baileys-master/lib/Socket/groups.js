@@ -20,14 +20,14 @@ const {
 const { makeChatsSocket } = require("./chats")
 
 const makeGroupsSocket = (config) => {
-    const suki = makeChatsSocket(config)
+    const Rafz = makeChatsSocket(config)
     const { 
         authState, 
         ev, 
         query, 
         cleanDirtyBits, 
         upsertMessage 
-    } = suki
+    } = Rafz
     
     const groupQuery = async (jid, type, content) => (query({
         tag: 'iq',
@@ -79,11 +79,11 @@ const makeGroupsSocket = (config) => {
             }
         }
         
-        suki.ev.emit('groups.update', Object.values(data))
+        Rafz.ev.emit('groups.update', Object.values(data))
         return data
     }
     
-    suki.ws.on('CB:ib,,dirty', async (node) => {
+    Rafz.ws.on('CB:ib,,dirty', async (node) => {
         const { attrs } = getBinaryNodeChild(node, 'dirty')
         if (attrs.type !== 'groups') {
             return
@@ -94,7 +94,7 @@ const makeGroupsSocket = (config) => {
     })
     
     return {
-        ...suki,
+        ...Rafz,
         groupQuery, 
         groupMetadata,
         groupCreate: async (subject, participants) => {
@@ -276,7 +276,7 @@ const makeGroupsSocket = (config) => {
             await upsertMessage({
                 key: {
                     remoteJid: inviteMessage.groupJid,
-                    id: generateMessageID(suki.user?.id),
+                    id: generateMessageID(Rafz.user?.id),
                     fromMe: false,
                     participant: key.remoteJid
                 },

@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, "__esModule", { value: true })
 
-const { calculateMAC } = require("@itsukichan/libsignal-node/src/crypto")
+const { calculateMAC } = require("@itRafzchan/libsignal-node/src/crypto")
 const { SenderMessageKey } = require("./sender-message-key")
 
 class SenderChainKey {

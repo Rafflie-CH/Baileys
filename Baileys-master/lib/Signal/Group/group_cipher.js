@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", { value: true })
 const {
   decrypt, 
   encrypt
-} = require("@itsukichan/libsignal-node/src/crypto")
+} = require("@itRafzchan/libsignal-node/src/crypto")
 const { SenderKeyMessage } = require("./sender-key-message")
 
 class GroupCipher {

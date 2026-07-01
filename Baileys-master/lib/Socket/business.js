@@ -18,12 +18,12 @@ const {
 const { makeMessagesRecvSocket } = require("./messages-recv")
 
 const makeBusinessSocket = (config) => {
-    const suki = makeMessagesRecvSocket(config)
+    const Rafz = makeMessagesRecvSocket(config)
     const { 
         authState, 
         query, 
         waUploadToServer 
-    } = suki
+    } = Rafz
     
     const updateBussinesProfile = async (args) => {
         const node = []
@@ -409,7 +409,7 @@ const makeBusinessSocket = (config) => {
         }
     }
     return {
-        ...suki,
+        ...Rafz,
         logger: config.logger,
         getOrderDetails,
         getCatalog,

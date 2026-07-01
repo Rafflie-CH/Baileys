@@ -9,7 +9,7 @@ const {
   createHmac,
   randomBytes 
 } = require("crypto")
-const { curve } = require("@itsukichan/libsignal-node")
+const { curve } = require("@itRafzchan/libsignal-node")
 const { KEY_BUNDLE_TYPE } = require("../Defaults/constants")
 
 const generateSignalPubKey = (pubKey) => (

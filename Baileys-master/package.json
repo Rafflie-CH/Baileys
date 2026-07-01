@@ -1,7 +1,7 @@
 {
-  "name": "@itsukichan/baileys",
+  "name": "@itRafzchan/baileys",
   "version": "7.3.2",
-  "description": "WhatsApp API Modification By Itsukichann",
+  "description": "WhatsApp API Modification By ItRafzchann",
   "keywords": [
     "whatsapp",
     "js-whatsapp",
@@ -12,13 +12,13 @@
     "automation",
     "multi-device"
   ],
-  "homepage": "https://github.com/Itsukichann/Baileys",
+  "homepage": "https://github.com/ItRafzchann/Baileys",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Itsukichann/Baileys.git"
+    "url": "git+ssh://git@github.com/ItRafzchann/Baileys.git"
   },
   "license": "MIT",
-  "author": "Itsukichann",
+  "author": "ItRafzchann",
 
   "main": "lib/index.js",
   "files": [
@@ -42,7 +42,7 @@
     "@hapi/boom": "^9.1.3",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@cacheable/node-cache": "1.5.3",
-    "@itsukichan/libsignal-node": "^1.0.1",
+    "@itRafzchan/libsignal-node": "^1.0.1",
     "async-mutex": "^0.5.0",
     "audio-decode": "^2.2.2",
     "cache-manager": "^5.7.6",
@@ -62,7 +62,7 @@
     "@types/jest": "^29.5.14",
     "@types/node": "^16.0.0",
     "@types/ws": "^8.0.0",
-    "@itsukichan/eslint-config": "^1.0.0",
+    "@itRafzchan/eslint-config": "^1.0.0",
     "conventional-changelog-cli": "^2.2.2",
     "eslint": "^8.0.0",
     "jest": "^30.1.1",
@@ -100,6 +100,6 @@
   },
 
   "bugs": {
-    "url": "https://github.com/Itsukichann/Baileys/issues"
+    "url": "https://github.com/ItRafzchann/Baileys/issues"
   }
 }
