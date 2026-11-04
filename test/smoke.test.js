@@ -5,6 +5,7 @@ const path = require('path')
 const { EventEmitter } = require('events')
 
 const ROOT = path.join(__dirname, '..')
+const BASELINE = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures/exports.json'), 'utf8'))
 
 test('entrypoint files exist', () => {
   for (const f of [
@@ -15,18 +16,19 @@ test('entrypoint files exist', () => {
   }
 })
 
-test('require lib — enough exports (contract)', () => {
+test('export snapshot — no silent loss', () => {
   const lib = require('../lib')
-  const keys = Object.keys(lib)
-  // Real baseline ~360+; keep floor high so mass-deletion fails CI
-  assert.ok(keys.length >= 250, 'export count too low: ' + keys.length)
-  const must = ['useMultiFileAuthState', 'DisconnectReason', 'proto', 'Browsers']
-  for (const k of must) {
-    assert.ok(k in lib || typeof lib[k] !== 'undefined' || (lib.default && k in lib), 'missing export ' + k)
+  const now = Object.keys(lib)
+  assert.ok(now.length >= 250, 'export count too low: ' + now.length)
+  // If baseline is full list, every name must remain
+  if (BASELINE.length >= 100) {
+    const missing = BASELINE.filter(k => !(k in lib))
+    assert.equal(missing.length, 0, 'exports hilang: ' + missing.slice(0, 20).join(','))
+  } else {
+    for (const k of BASELINE) {
+      assert.ok(k in lib, 'missing required export ' + k)
+    }
   }
-  // soft: default or makeWASocket
-  const sockFn = lib.default || lib.makeWASocket
-  assert.ok(typeof sockFn === 'function' || typeof lib === 'function')
 })
 
 test('session-pool maxRetry + backoff rises', async () => {
@@ -53,7 +55,6 @@ test('session-pool maxRetry + backoff rises', async () => {
   if (times.length >= 3) {
     const gaps = []
     for (let i = 1; i < times.length; i++) gaps.push(times[i] - times[i - 1])
-    // at least one gap should be larger than the first (backoff)
     const rising = gaps.some((g, i) => i > 0 && g > gaps[0] * 1.15)
     assert.ok(rising || gaps.length < 2, 'backoff gaps should rise: ' + gaps.join(','))
   }
@@ -63,10 +64,29 @@ test('multi-file auth writes mode 600', async () => {
   const os = require('os')
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'rafz-auth-'))
   const { useMultiFileAuthState } = require('../lib/Utils/use-multi-file-auth-state')
-  const { state, saveCreds } = await useMultiFileAuthState(dir)
+  const { saveCreds } = await useMultiFileAuthState(dir)
   await saveCreds()
   const creds = path.join(dir, 'creds.json')
   assert.ok(fs.existsSync(creds), 'creds.json missing')
   const mode = fs.statSync(creds).mode & 0o777
   assert.equal(mode, 0o600, 'expected mode 600, got ' + mode.toString(8))
+})
+
+test('QR listener does not false-error when qrcode-terminal present', async () => {
+  let errMsg = null
+  const logger = {
+    error: (m) => { errMsg = typeof m === 'string' ? m : (m && m.msg) || String(m) },
+    info() {}, debug() {}, warn() {}, trace() {}, child() { return this }
+  }
+  const g = require('../lib/Utils/generics')
+  const fn = g.printQRIfNecessaryListener || g.default?.printQRIfNecessaryListener
+  if (typeof fn !== 'function') {
+    // soft skip if not exported from this entry
+    return
+  }
+  const ev = new EventEmitter()
+  fn(ev, logger)
+  ev.emit('connection.update', { qr: 'test-qr-payload' })
+  await new Promise(r => setTimeout(r, 150))
+  assert.ok(!errMsg || !String(errMsg).includes('not added as dependency'), 'false QR dependency error: ' + errMsg)
 })

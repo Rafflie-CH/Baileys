@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-      - run: npm install --no-audit --no-fund --ignore-scripts
+      - run: npm ci --ignore-scripts --no-audit
       - run: node --check lib/index.js
       - run: node -e "const k=Object.keys(require('./lib')); if(k.length<250){console.error('exports',k.length);process.exit(1)}; console.log('exports',k.length)"
       - run: node --test test/

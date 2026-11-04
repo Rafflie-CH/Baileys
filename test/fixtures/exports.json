@@ -1,0 +1,15 @@
+[
+  "useMultiFileAuthState",
+  "useSingleFileAuthState",
+  "DisconnectReason",
+  "proto",
+  "Browsers",
+  "makeCacheableSignalKeyStore",
+  "generateWAMessageFromContent",
+  "getContentType",
+  "isJidGroup",
+  "downloadMediaMessage",
+  "fetchLatestBaileysVersion",
+  "initAuthCreds",
+  "BufferJSON"
+]
