@@ -1,0 +1,93 @@
+{
+  "name": "@rafz/baileys",
+  "version": "7.3.2-rafz",
+  "description": "Rafz Baileys all-in: unique scheduler/antidelete/commands/broadcast/A2UI/WASM optional + full interactive newsletter call multi-auth",
+  "keywords": [
+    "whatsapp",
+    "js-whatsapp",
+    "whatsapp-api",
+    "whatsapp-web",
+    "whatsapp-chat",
+    "whatsapp-group",
+    "automation",
+    "multi-device",
+    "rafz",
+    "baileys"
+  ],
+  "homepage": "https://t.me/Rafzhost",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rafflie-CH/Baileys.git"
+  },
+  "license": "MIT",
+  "author": "Rafz",
+  "main": "lib/index.js",
+  "files": [
+    "FEATURES.md",
+    "README.md",
+    "WAProto/*",
+    "engine-requirements.js",
+    "lib/*",
+    "scripts/*"
+  ],
+  "scripts": {
+    "preinstall": "node ./engine-requirements.js",
+    "test": "node --test test/",
+    "check": "node --check lib/index.js && node -e \"require('./lib')\""
+  },
+  "dependencies": {
+    "@hapi/boom": "^9.1.3",
+    "@adiwajshing/keyed-db": "^0.2.4",
+    "@cacheable/node-cache": "1.5.3",
+    "@itsukichan/libsignal-node": "^1.0.1",
+    "async-mutex": "^0.5.0",
+    "audio-decode": "^2.2.2",
+    "cache-manager": "^5.7.6",
+    "fflate": "^0.8.2",
+    "lodash": "^4.17.21",
+    "unfurl.js": "^6.4.0",
+    "lru-cache": "^11.1.0",
+    "music-metadata": "^7.12.3",
+    "pino": "^9.6",
+    "p-queue": "^9.0.0",
+    "protobufjs": "^7.2.4",
+    "qrcode-terminal": "^0.12.0",
+    "ws": "^8.13.0"
+  },
+  "peerDependencies": {
+    "jimp": "^0.22.12",
+    "sharp": "*",
+    "whatsapp-rust-bridge": "0.5.4",
+    "better-sqlite3": "*"
+  },
+  "peerDependenciesMeta": {
+    "jimp": {
+      "optional": true
+    },
+    "sharp": {
+      "optional": true
+    },
+    "whatsapp-rust-bridge": {
+      "optional": true
+    },
+    "better-sqlite3": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "bugs": {
+    "url": "https://t.me/rafzch"
+  },
+  "module": "lib/index.mjs",
+  "types": null,
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "import": "./lib/index.mjs",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  }
+}

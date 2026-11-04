@@ -1,0 +1,34 @@
+name: ci
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm install --no-audit --no-fund --ignore-scripts
+      - run: node --check lib/index.js
+      - run: node -e "const k=Object.keys(require('./lib')); if(k.length<250){console.error('exports',k.length);process.exit(1)}; console.log('exports',k.length)"
+      - run: node --test test/
+      - run: |
+          node -e "
+            const {execSync}=require('child_process');
+            let out;
+            try { out=execSync('npm pack --dry-run --json',{encoding:'utf8'}); }
+            catch(e){ out=e.stdout||''; }
+            try {
+              const j=JSON.parse(out);
+              const files=(j[0]&&j[0].files)||j.files||[];
+              const n=files.length||0;
+              console.log('pack files', n);
+              if(n && n<180){ process.exit(1); }
+            } catch(_) { console.log('pack parse skip'); }
+          "

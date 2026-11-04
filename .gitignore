@@ -1,0 +1,15 @@
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.DS_Store
+*.session
+*_store*
+auth_info*
+creds.json
+*.db
+.env
+.idea/
+.vscode/
+dist/
+coverage/
+*.tmp
