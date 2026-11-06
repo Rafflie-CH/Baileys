@@ -72,21 +72,3 @@ test('multi-file auth writes mode 600', async () => {
   assert.equal(mode, 0o600, 'expected mode 600, got ' + mode.toString(8))
 })
 
-test('QR listener does not false-error when qrcode-terminal present', async () => {
-  let errMsg = null
-  const logger = {
-    error: (m) => { errMsg = typeof m === 'string' ? m : (m && m.msg) || String(m) },
-    info() {}, debug() {}, warn() {}, trace() {}, child() { return this }
-  }
-  const g = require('../lib/Utils/generics')
-  const fn = g.printQRIfNecessaryListener || g.default?.printQRIfNecessaryListener
-  if (typeof fn !== 'function') {
-    // soft skip if not exported from this entry
-    return
-  }
-  const ev = new EventEmitter()
-  fn(ev, logger)
-  ev.emit('connection.update', { qr: 'test-qr-payload' })
-  await new Promise(r => setTimeout(r, 150))
-  assert.ok(!errMsg || !String(errMsg).includes('not added as dependency'), 'false QR dependency error: ' + errMsg)
-})

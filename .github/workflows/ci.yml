@@ -14,7 +14,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-      - run: npm ci --ignore-scripts --no-audit
+      - name: Install
+        run: |
+          if [ -f package-lock.json ]; then npm ci --ignore-scripts --no-audit; else npm install --no-audit --no-fund --ignore-scripts; fi
       - run: node --check lib/index.js
       - run: node -e "const k=Object.keys(require('./lib')); if(k.length<250){console.error('exports',k.length);process.exit(1)}; console.log('exports',k.length)"
       - run: node --test test/
